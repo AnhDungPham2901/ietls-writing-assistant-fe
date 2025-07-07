@@ -102,51 +102,11 @@
   font-style: italic;
 }
 
-.writing-input-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 30px;
-  padding: 0 5px;
-}
-
-.character-count {
-  color: #7f8c8d;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.tips {
-  flex: 1;
-  background: #f8f9fa;
-  padding: 15px;
-  border-radius: 6px;
-  border-left: 4px solid #3498db;
-}
-
-.tips p {
-  margin: 0 0 10px 0;
-  color: #2c3e50;
-  font-weight: 600;
-}
-
-.tips ul {
-  margin: 0;
-  padding-left: 20px;
-  color: #5d6d7e;
-}
-
-.tips li {
-  margin-bottom: 5px;
-  font-size: 0.9rem;
-}
-
-/* Submit section styles */
+/* Submit section styles - positioned right after textarea */
 .submit-section {
-  margin-top: 25px;
   text-align: center;
-  padding: 20px 0;
-  border-top: 1px solid #e0e6ed;
+  margin-bottom: 25px;
+  padding: 15px 0;
 }
 
 .submit-button {
@@ -176,6 +136,40 @@
   box-shadow: none;
 }
 
+.writing-input-info {
+  display: flex;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+.tips {
+  max-width: 600px;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tips p {
+  margin: 0 0 12px 0;
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.tips ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #5d6d7e;
+}
+
+.tips li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .writing-input-container {
@@ -184,11 +178,6 @@
   
   .writing-input-header h2 {
     font-size: 1.8rem;
-  }
-  
-  .writing-input-info {
-    flex-direction: column;
-    gap: 15px;
   }
   
   .writing-textarea {
@@ -210,5 +199,13 @@
   .submit-button {
     width: 100%;
     padding: 15px;
+  }
+
+  .tips {
+    padding: 15px;
+  }
+
+  .tips li {
+    font-size: 0.85rem;
   }
 }

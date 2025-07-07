@@ -79,20 +79,6 @@ const WritingInput = () => {
         />
       </div>
 
-      <div className="writing-input-info">
-        <div className="character-count">
-          {text.length}/5000 characters
-        </div>
-        <div className="tips">
-          <p><strong>Tips:</strong></p>
-          <ul>
-            <li>IELTS Task 1: Aim for 150+ words</li>
-            <li>IELTS Task 2: Aim for 250+ words</li>
-            <li>Use Ctrl+V (Cmd+V on Mac) to paste your text</li>
-          </ul>
-        </div>
-      </div>
-
       <div className="submit-section">
         <button 
           onClick={handleSubmit}
@@ -101,6 +87,19 @@ const WritingInput = () => {
         >
           Submit to assess
         </button>
+      </div>
+
+      <div className="writing-input-info">
+        <div className="tips">
+          <p><strong>Writing Tips:</strong></p>
+          <ul>
+            <li>IELTS Task 1: Aim for 150+ words (describe graphs, charts, or diagrams)</li>
+            <li>IELTS Task 2: Aim for 250+ words (essay format with clear introduction, body, and conclusion)</li>
+            <li>Use formal academic language and avoid contractions</li>
+            <li>Plan your essay structure before writing</li>
+            <li>Check grammar, spelling, and punctuation carefully</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
