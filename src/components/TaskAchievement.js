@@ -1,25 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 import './TaskAchievement.css';
 
 const TaskAchievement = ({ taskType = 'Task 2' }) => {
   const [expandedItems, setExpandedItems] = useState(new Set());
-  const [submittedText, setSubmittedText] = useState('');
-  const [submittedWordCount, setSubmittedWordCount] = useState(0);
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    // Retrieve submitted text from localStorage
-    const text = localStorage.getItem('submittedText') || '';
-    const wordCount = parseInt(localStorage.getItem('submittedWordCount') || '0');
-    setSubmittedText(text);
-    setSubmittedWordCount(wordCount);
-
-    // If no text was submitted, redirect back to home
-    if (!text.trim()) {
-      navigate('/');
-    }
-  }, [navigate]);
   const taskCriteria = {
     'Task 1': [
       {
@@ -117,30 +101,8 @@ const TaskAchievement = ({ taskType = 'Task 2' }) => {
 
   const scoreBand = getScoreBand(achievementPercentage);
 
-  const handleBackToInput = () => {
-    navigate('/');
-  };
-
   return (
     <div className="task-achievement-container">
-      <div className="back-button-container">
-        <button onClick={handleBackToInput} className="back-button">
-          ← Back to Writing Input
-        </button>
-      </div>
-
-      {submittedText && (
-        <div className="submitted-text-preview">
-          <h3>Your Submitted Text ({submittedWordCount} words)</h3>
-          <div className="text-preview">
-            {submittedText.length > 200 
-              ? `${submittedText.substring(0, 200)}...` 
-              : submittedText
-            }
-          </div>
-        </div>
-      )}
-
       <div className="task-achievement-header">
         <div className="header-content">
           <h2>Task Achievement Assessment</h2>
