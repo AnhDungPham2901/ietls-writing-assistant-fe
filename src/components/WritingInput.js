@@ -28,6 +28,17 @@ const WritingInput = () => {
     }, 0);
   };
 
+  const handleSubmit = () => {
+    if (text.trim()) {
+      console.log('Submitted text:', text);
+      console.log('Word count:', wordCount);
+      // Here you can add logic to send the text for assessment
+      alert('Text submitted for assessment!');
+    } else {
+      alert('Please enter some text before submitting.');
+    }
+  };
+
   return (
     <div className="writing-input-container">
       <div className="writing-input-header">
@@ -73,6 +84,16 @@ const WritingInput = () => {
             <li>Use Ctrl+V (Cmd+V on Mac) to paste your text</li>
           </ul>
         </div>
+      </div>
+
+      <div className="submit-section">
+        <button 
+          onClick={handleSubmit}
+          className="submit-button"
+          disabled={!text.trim()}
+        >
+          Submit to assess
+        </button>
       </div>
     </div>
   );
