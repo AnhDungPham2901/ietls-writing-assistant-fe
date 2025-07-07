@@ -1,0 +1,391 @@
+.grammatical-range-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+/* Header Section */
+.grammar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f1f3f4;
+}
+
+.header-content h2 {
+  color: #1a365d;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+
+.header-content p {
+  color: #4a5568;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.grammar-score {
+  text-align: center;
+}
+
+.score-circle {
+  background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+  color: white;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(237, 137, 54, 0.4);
+}
+
+.band-number {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.band-label {
+  font-size: 0.65rem;
+  text-align: center;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+/* Error Summary */
+.error-summary {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+  border-radius: 10px;
+  border-left: 4px solid #f56565;
+}
+
+.summary-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.stat-item {
+  text-align: center;
+  flex: 1;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #c53030;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  color: #4a5568;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Errors List */
+.errors-list h3 {
+  color: #1a365d;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.no-errors {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+  border-radius: 10px;
+  border: 2px solid #48bb78;
+}
+
+.success-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.no-errors h4 {
+  color: #2f855a;
+  font-size: 1.4rem;
+  margin: 0 0 10px 0;
+}
+
+.no-errors p {
+  color: #4a5568;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Error Items */
+.error-item {
+  border: 2px solid #f56565;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #fffaf0 0%, #fef5e7 100%);
+  transition: all 0.3s ease;
+}
+
+.error-item:hover {
+  box-shadow: 0 4px 12px rgba(245, 101, 101, 0.15);
+  transform: translateY(-1px);
+}
+
+.error-header {
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.error-main {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+}
+
+.error-indicator {
+  flex-shrink: 0;
+}
+
+.error-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f56565;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.error-content {
+  flex: 1;
+}
+
+.error-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  color: #c53030;
+}
+
+.error-sentence {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.error-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #7c2d12;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.incorrect-text {
+  background: #fed7d7;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 3px solid #f56565;
+  font-style: italic;
+  color: #2d3748;
+  line-height: 1.5;
+}
+
+.expand-icon {
+  flex-shrink: 0;
+}
+
+.chevron {
+  width: 20px;
+  height: 20px;
+  color: #718096;
+  transition: transform 0.3s ease;
+}
+
+.chevron.expanded {
+  transform: rotate(180deg);
+}
+
+/* Error Fix Section */
+.error-fix {
+  border-top: 1px solid #feb2b2;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.fix-content {
+  padding: 20px;
+}
+
+.correct-sentence {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.fix-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2f855a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.correct-text {
+  background: #e6fffa;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 3px solid #48bb78;
+  color: #2d3748;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.grammar-tip {
+  display: flex;
+  gap: 12px;
+  padding: 15px;
+  background: #f7fafc;
+  border-radius: 8px;
+  border-left: 4px solid #4299e1;
+}
+
+.tip-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.tip-text {
+  color: #2d3748;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Grammar Summary */
+.grammar-summary {
+  margin-top: 30px;
+  padding: 25px;
+  background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+  border-radius: 10px;
+  border-left: 4px solid #4299e1;
+}
+
+.grammar-summary h3 {
+  color: #2b6cb0;
+  font-size: 1.3rem;
+  margin: 0 0 15px 0;
+  font-weight: 600;
+}
+
+.summary-content p {
+  color: #2d3748;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.improvement-areas h4 {
+  color: #2b6cb0;
+  margin: 0 0 10px 0;
+  font-size: 1.1rem;
+}
+
+.improvement-areas ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #4a5568;
+}
+
+.improvement-areas li {
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grammatical-range-container {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .grammar-header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .header-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .score-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .band-number {
+    font-size: 1.6rem;
+  }
+
+  .summary-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .error-header {
+    padding: 15px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .error-main {
+    width: 100%;
+  }
+
+  .error-sentence,
+  .correct-sentence {
+    gap: 8px;
+  }
+
+  .incorrect-text,
+  .correct-text {
+    padding: 10px;
+  }
+
+  .grammar-tip {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .grammar-summary {
+    padding: 20px;
+  }
+}

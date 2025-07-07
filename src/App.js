@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import WritingInput from './components/WritingInput';
-import TaskAchievement from './components/TaskAchievement';
+import AssessmentResult from './components/AssessmentResult';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<WritingInput />} />
-          <Route path="/assessment" element={<TaskAchievement taskType="Task 2" />} />
+          <Route path="/assessment" element={<AssessmentResult taskType="Task 2" />} />
         </Routes>
       </Router>
     </div>
