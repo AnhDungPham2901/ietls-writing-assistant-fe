@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './WritingInput.css';
 
 const WritingInput = () => {
   const [text, setText] = useState('');
   const [wordCount, setWordCount] = useState(0);
+  const navigate = useNavigate();
 
   const handleTextChange = (e) => {
     const inputText = e.target.value;
@@ -32,8 +34,13 @@ const WritingInput = () => {
     if (text.trim()) {
       console.log('Submitted text:', text);
       console.log('Word count:', wordCount);
-      // Here you can add logic to send the text for assessment
-      alert('Text submitted for assessment!');
+      
+      // Store the submitted text in localStorage or state management
+      localStorage.setItem('submittedText', text);
+      localStorage.setItem('submittedWordCount', wordCount.toString());
+      
+      // Navigate to assessment page
+      navigate('/assessment');
     } else {
       alert('Please enter some text before submitting.');
     }
