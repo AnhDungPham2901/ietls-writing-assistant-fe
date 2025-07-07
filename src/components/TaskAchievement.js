@@ -228,29 +228,6 @@ const TaskAchievement = ({ taskType = 'Task 2' }) => {
           </div>
         ))}
       </div>
-
-      <div className="improvement-suggestions">
-        <h3>Areas for Improvement</h3>
-        <div className="suggestions-list">
-          {currentCriteria
-            .filter(criterion => !criterion.achieved)
-            .map(criterion => (
-              <div key={criterion.id} className="suggestion-item">
-                <div className="suggestion-icon">💡</div>
-                <div className="suggestion-content">
-                  <strong>{criterion.requirement}:</strong>
-                  <span>{criterion.explanation}</span>
-                </div>
-              </div>
-            ))}
-          {currentCriteria.every(criterion => criterion.achieved) && (
-            <div className="no-suggestions">
-              <div className="celebration-icon">🎉</div>
-              <p>Excellent work! All task requirements have been achieved.</p>
-            </div>
-          )}
-        </div>
-      </div>
     </div>
   );
 };
