@@ -5,6 +5,7 @@ import './WritingInput.css';
 const WritingInput = () => {
   const [text, setText] = useState('');
   const [wordCount, setWordCount] = useState(0);
+  const [requirement, setRequirement] = useState('');
   const navigate = useNavigate();
 
   const handleTextChange = (e) => {
@@ -16,9 +17,17 @@ const WritingInput = () => {
     setWordCount(words.length);
   };
 
+  const handleRequirementChange = (e) => {
+    setRequirement(e.target.value);
+  };
+
   const handleClear = () => {
     setText('');
     setWordCount(0);
+  };
+
+  const handleClearRequirement = () => {
+    setRequirement('');
   };
 
   const handlePaste = (e) => {
@@ -34,10 +43,12 @@ const WritingInput = () => {
     if (text.trim()) {
       console.log('Submitted text:', text);
       console.log('Word count:', wordCount);
+      console.log('Task requirement:', requirement);
       
-      // Store the submitted text in localStorage or state management
+      // Store the submitted text and requirement in localStorage
       localStorage.setItem('submittedText', text);
       localStorage.setItem('submittedWordCount', wordCount.toString());
+      localStorage.setItem('taskRequirement', requirement);
       
       // Navigate to assessment page
       navigate('/assessment');
@@ -52,7 +63,28 @@ const WritingInput = () => {
         <h2>IELTS Writing Assistant</h2>
         <p>Paste or type your essay below for analysis and feedback</p>
       </div>
-      
+
+      <div className="requirement-section">
+        <div className="section-header">
+          <h3>Task Requirement</h3>
+          <button 
+            className="clear-button requirement-clear" 
+            onClick={handleClearRequirement}
+            disabled={requirement.length === 0}
+          >
+            Clear Requirement
+          </button>
+        </div>
+        <textarea
+          value={requirement}
+          onChange={handleRequirementChange}
+          placeholder="Enter the IELTS writing task requirement here (e.g., 'Write an essay discussing the advantages and disadvantages of social media...')"
+          className="requirement-textarea"
+          rows={4}
+          maxLength={1000}
+        />
+      </div>
+
       <div className="writing-input-controls">
         <div className="word-count">
           <span className="word-count-label">Word Count:</span>
@@ -63,11 +95,12 @@ const WritingInput = () => {
           onClick={handleClear}
           disabled={text.length === 0}
         >
-          Clear
+          Clear Response
         </button>
       </div>
 
       <div className="writing-input-area">
+        <h3>Your Response</h3>
         <textarea
           value={text}
           onChange={handleTextChange}
