@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import TaskAchievement from './TaskAchievement';
 import GrammaticalRange from './GrammaticalRange';
 import LexicalResource from './LexicalResource';
 import './AssessmentResult.css';
@@ -8,7 +7,7 @@ import './AssessmentResult.css';
 const AssessmentResult = ({ taskType = 'Task 2' }) => {
   const [submittedText, setSubmittedText] = useState('');
   const [submittedWordCount, setSubmittedWordCount] = useState(0);
-  const [activeTab, setActiveTab] = useState('task-achievement');
+  const [activeTab, setActiveTab] = useState('lexical-resource');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,12 +49,6 @@ const AssessmentResult = ({ taskType = 'Task 2' }) => {
 
       <div className="assessment-tabs">
         <button 
-          className={`tab-button ${activeTab === 'task-achievement' ? 'active' : ''}`}
-          onClick={() => setActiveTab('task-achievement')}
-        >
-          Task Achievement
-        </button>
-        <button 
           className={`tab-button ${activeTab === 'lexical-resource' ? 'active' : ''}`}
           onClick={() => setActiveTab('lexical-resource')}
         >
@@ -70,11 +63,6 @@ const AssessmentResult = ({ taskType = 'Task 2' }) => {
       </div>
 
       <div className="tab-content">
-        {activeTab === 'task-achievement' && (
-          <div className="tab-panel">
-            <TaskAchievement taskType={taskType} />
-          </div>
-        )}
         {activeTab === 'lexical-resource' && (
           <div className="tab-panel">
             <LexicalResource />
