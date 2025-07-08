@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TaskAchievement from './TaskAchievement';
 import GrammaticalRange from './GrammaticalRange';
+import LexicalResource from './LexicalResource';
 import './AssessmentResult.css';
 
 const AssessmentResult = ({ taskType = 'Task 2' }) => {
@@ -55,6 +56,12 @@ const AssessmentResult = ({ taskType = 'Task 2' }) => {
           Task Achievement
         </button>
         <button 
+          className={`tab-button ${activeTab === 'lexical-resource' ? 'active' : ''}`}
+          onClick={() => setActiveTab('lexical-resource')}
+        >
+          Lexical Resource
+        </button>
+        <button 
           className={`tab-button ${activeTab === 'grammatical-range' ? 'active' : ''}`}
           onClick={() => setActiveTab('grammatical-range')}
         >
@@ -66,6 +73,11 @@ const AssessmentResult = ({ taskType = 'Task 2' }) => {
         {activeTab === 'task-achievement' && (
           <div className="tab-panel">
             <TaskAchievement taskType={taskType} />
+          </div>
+        )}
+        {activeTab === 'lexical-resource' && (
+          <div className="tab-panel">
+            <LexicalResource />
           </div>
         )}
         {activeTab === 'grammatical-range' && (
