@@ -1,12 +1,8 @@
 import React, { useState, useMemo } from 'react';
-import { getDataRaw } from '../utils/lexicalData';
 import './LexicalResourceDetail.css';
 
-const LexicalResourceDetail = () => {
+const LexicalResourceDetail = ({ dataRaw = {} }) => {
   const [selectedLevel, setSelectedLevel] = useState('All');
-  
-  // Get raw data
-  const dataRaw = getDataRaw();
   
   // Available CEFR levels
   const cefrLevels = ['All', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
@@ -79,5 +75,6 @@ const LexicalResourceDetail = () => {
     </div>
   );
 };
+
 
 export default LexicalResourceDetail;
