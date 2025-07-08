@@ -1,0 +1,116 @@
+.lexical-resource-detail-container {
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.detail-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2d3748;
+}
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 16px;
+  background-color: #f7fafc;
+  border-radius: 6px;
+}
+
+.filter-label {
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.level-filter-select {
+  padding: 8px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  background-color: white;
+  color: #2d3748;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.level-filter-select:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.count-indicator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 12px;
+  background-color: #edf2f7;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.level-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.words-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.word-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.word-item:hover {
+  background-color: #e9ecef;
+}
+
+.word-text {
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.level-tag {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.level-a1 { background-color: #fed7d7; color: #c53030; }
+.level-a2 { background-color: #feebc8; color: #dd6b20; }
+.level-b1 { background-color: #fefcbf; color: #d69e2e; }
+.level-b2 { background-color: #c6f6d5; color: #38a169; }
+.level-c1 { background-color: #bee3f8; color: #3182ce; }
+.level-c2 { background-color: #d6b3f8; color: #805ad5; }
+
+.no-words {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  color: #718096;
+  font-style: italic;
+}
