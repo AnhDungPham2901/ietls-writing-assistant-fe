@@ -1,5 +1,34 @@
-// Function to get raw lexical data (word -> CEFR level mapping)
-export const getDataRaw = () => {
+// Function to get raw lexical data from API (word -> CEFR level mapping)
+export const getDataRaw = async (text) => {
+  try {
+    const response = await fetch('http://127.0.0.1:8000/word-level-check', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ text: text || 'hello hi excellent good wonderful amazing sophisticated extraordinary beautiful complex intricate multifaceted' }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    
+    if (data.error) {
+      console.error('API Error:', data.error);
+      return getFallbackData();
+    }
+
+    return data;
+  } catch (error) {
+    console.error('Error fetching word levels:', error);
+    return getFallbackData();
+  }
+};
+
+// Fallback data in case API fails
+const getFallbackData = () => {
   return {
     'hello': 'A1', 
     'hi': 'A2', 
